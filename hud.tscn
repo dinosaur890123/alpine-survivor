@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://btdfblg0uvxbf"]
+
+[ext_resource type="Script" uid="uid://irnxpoht0c44" path="res://hud.gd" id="1_37p78"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_37p78")
+
+[node name="StaminaBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 393.0
+offset_bottom = 91.0
+
+[node name="WarmthBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HungerBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
