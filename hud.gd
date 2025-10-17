@@ -2,6 +2,9 @@ extends Node
 @onready var stamina_bar = $StaminaBar
 @onready var warmth_bar = $WarmthBar
 @onready var hunger_bar = $HungerBar
+@onready var stamina_label = $StaminaBar/StaminaLabel
+@onready var warmth_label = $WarmthBar/WarmthLabel
+@onready var hunger_label = $HungerBar/HungerLabel
 func _process(delta):
 	stamina_bar.max_value = PlayerStats.max_stamina
 	stamina_bar.value = PlayerStats.current_stamina

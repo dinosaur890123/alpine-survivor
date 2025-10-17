@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c05wbfojstold"]
+[gd_scene load_steps=8 format=3 uid="uid://c05wbfojstold"]
 
 [ext_resource type="PackedScene" uid="uid://cbhhwf1uenmqj" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://btdfblg0uvxbf" path="res://hud.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c35rcrybyasaj" path="res://berry_bush.tscn" id="3_h2yge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_top_color = Color(0.70871, 0.719641, 0.713418, 1)
@@ -54,3 +55,5 @@ depth = 5.71
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(24.140266, 0, 0, 0, 14.849361, 0, 0, 0, 8.354378, -2.1452775, 8.282789, 0)
 shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="BerryBush" parent="." instance=ExtResource("3_h2yge")]

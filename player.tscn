@@ -24,7 +24,7 @@ shape = SubResource("CapsuleShape3D_onrkg")
 [node name="CameraMount" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="CameraMount"]
-transform = Transform3D(-0.991772, 0, -0.128017, 0, 1, 0, 0.128017, 0, -0.991772, 0, 4.83661, -8.6013)
+transform = Transform3D(-0.991772, 0, -0.128017, 0, 1, 0, 0.128017, 0, -0.991772, 0, 6.874278, -14.514852)
 current = true
 
 [node name="InteractionArea" type="Area3D" parent="."]

@@ -8,6 +8,7 @@
 height = 1.9465332
 
 [node name="BerryBush" type="Area3D"]
+transform = Transform3D(3.6333392, 0, 0, 0, 3.348142, 0, 0, 0, 5.0331583, 0, 1.7148764, 0)
 script = ExtResource("1_6emdh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

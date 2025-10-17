@@ -11,7 +11,7 @@ func _ready():
 
 func _unhandled_input(event):
     if event is InputEventMouseMotion:
-        rotate_y(-event.relative.x * 0.005)
+        camera_mount.rotate_y(-event.relative.x * 0.005)
         camera_mount.rotate_x(-event.relative.y * 0.005)
         camera_mount.rotation.x = clamp(camera_mount.rotation.x, -1.2, 1.2)
 
