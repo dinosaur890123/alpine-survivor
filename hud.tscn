@@ -9,17 +9,23 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_37p78")
 
-[node name="StaminaBar" type="TextureProgressBar" parent="."]
+[node name="StaminaBar" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_right = 393.0
-offset_bottom = 91.0
+offset_left = 968.0
+offset_top = 518.0
+offset_right = 1106.0
+offset_bottom = 591.0
 
-[node name="WarmthBar" type="TextureProgressBar" parent="."]
+[node name="WarmthBar" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 349.0
+offset_top = 521.0
+offset_right = 436.0
+offset_bottom = 583.0
 
-[node name="HungerBar" type="TextureProgressBar" parent="."]
+[node name="HungerBar" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 33.0
+offset_top = 513.0
+offset_right = 233.0
+offset_bottom = 602.0

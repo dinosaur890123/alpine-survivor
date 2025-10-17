@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c35rcrybyasaj"]
+
+[ext_resource type="Script" uid="uid://bsbqidpa5pra3" path="res://berry_bush.gd" id="1_6emdh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_haque"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6emdh"]
+height = 1.9465332
+
+[node name="BerryBush" type="Area3D"]
+script = ExtResource("1_6emdh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5227735, 0, 0, 0, 1.281357, 0, 0, 0, 1, 0, 0.050366282, 0.32129288)
+mesh = SubResource("SphereMesh_haque")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.2559419, 0, 0, 0, 1, 0, 0, 0, 2.25433, 0, -0.026733398, 0.27071548)
+shape = SubResource("CapsuleShape3D_6emdh")
