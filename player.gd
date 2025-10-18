@@ -6,6 +6,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 const SPRINT_SPEED = 8.0
 @onready var animation_player = $"character-a2/AnimationPlayer"
 @onready var camera_mount = $CameraMount
+@onready var character_model = $"character-a2"
+var campfire_scene = preload("res://campfire.tscn")
 func _ready():
     Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -21,6 +23,22 @@ func _unhandled_input(event):
         if interactable != null:
             animation_player.play("pick-up")
             interactable.interact()
+    if Input.is_action_just_pressed("craft_campfire"):
+        var recipe = {"stick": 2, "rock": 1}
+        var can_craft = true
+        for item in recipe:
+            if not PlayerStats.inventory.has(item) or PlayerStats.inventory[item] < recipe[item]:
+                can_craft = false
+                break
+        if can_craft:
+            print("Crafting a campfire!")
+            for item in recipe:
+                PlayerStats.inventory[item] -= recipe[item]
+                var new_campfire = campfire_scene.instantiate()
+                get_tree().root.add_child(new_campfire)
+                new_campfire.global_transform.origin = character_model.global_transform.origin + character_model.global_transform.basis.z * -2.0
+        else:
+            print("Not enough resources to craft a campfire. Need 2 sticks and 1 rock.")
 
 func _physics_process(delta):
     if not is_on_floor():

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7b3d6lmba01h"]
+
+[ext_resource type="Script" uid="uid://uesk5j765rl2" path="res://stick.gd" id="1_agfe5"]
+
+[node name="Stick" type="Area3D"]
+script = ExtResource("1_agfe5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
