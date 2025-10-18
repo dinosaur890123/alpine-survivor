@@ -18,9 +18,5 @@ mesh = SubResource("BoxMesh_oufq8")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.711828, 0.44834095, 0.17444581, 1)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
-autostart = true
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_b5him")

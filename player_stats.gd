@@ -5,10 +5,13 @@ var max_warmth: float = 100.0
 var current_warmth: float = 100.0
 var max_hunger: float = 100.0
 var current_hunger: float = 100.0
+
 var is_sheltered: bool = false
 var warmth_zones: int = 0
 var inventory = {}
-
+var recipes = {
+    "campfire": {"stick": 2, "rock": 1}
+}
 func _process(delta):
     current_hunger -= 0.5 * delta
     if not is_sheltered and warmth_zones <= 0:
@@ -29,7 +32,14 @@ func add_to_inventory(item_name):
     else:
         inventory[item_name] = 1
     print("Inventory: ", inventory)
-
+func remove_from_inventory(item_name):
+    if inventory.has(item_name) and inventory[item_name] > 0:
+        inventory[item_name] -= 1
+        if inventory[item_name] == 0:
+            inventory.erase(item_name)
+        print("Inventory: ", inventory)
+        return true
+    return false
 func enter_warmth_zone():
     warmth_zones += 1
     print("Entered warmth zone. Total zones: ", warmth_zones)
