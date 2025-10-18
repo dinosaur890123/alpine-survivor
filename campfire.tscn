@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://8ghwlgur3sly"]
+[gd_scene load_steps=4 format=3 uid="uid://8ghwlgur3sly"]
 
 [ext_resource type="Script" uid="uid://cbe8oj4ivgn81" path="res://campfire.gd" id="1_oufq8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oufq8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5him"]
 
 [node name="Campfire" type="Area3D"]
 script = ExtResource("1_oufq8")
@@ -8,6 +12,8 @@ script = ExtResource("1_oufq8")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.5693347, 0, 0, 0, 2.4350264, 0, 0, 0, 1.4739025, 0, 1.0088342, 0.4532404)
+mesh = SubResource("BoxMesh_oufq8")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.711828, 0.44834095, 0.17444581, 1)
@@ -15,3 +21,6 @@ light_color = Color(0.711828, 0.44834095, 0.17444581, 1)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
 autostart = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_b5him")
