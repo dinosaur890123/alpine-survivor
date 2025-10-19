@@ -66,3 +66,89 @@ offset_right = 199.0
 offset_bottom = -3.0
 text = "Hunger"
 horizontal_alignment = 1
+
+[node name="HotbarContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 979.0
+offset_right = 1326.0
+offset_bottom = 1045.0
+alignment = 1
+
+[node name="Slot1" type="PanelContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="ItemQuantity" type="Label" parent="HotbarContainer/Slot1"]
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ItemName" type="Label" parent="HotbarContainer/Slot1"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot2" type="PanelContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="ItemQuantity" type="Label" parent="HotbarContainer/Slot2"]
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ItemName" type="Label" parent="HotbarContainer/Slot2"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot3" type="PanelContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="ItemQuantity" type="Label" parent="HotbarContainer/Slot3"]
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ItemName" type="Label" parent="HotbarContainer/Slot3"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Slot4" type="PanelContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="ItemQuantity" type="Label" parent="HotbarContainer/Slot4"]
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ItemName" type="Label" parent="HotbarContainer/Slot4"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot5" type="PanelContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="ItemQuantity" type="Label" parent="HotbarContainer/Slot5"]
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ItemName" type="Label" parent="HotbarContainer/Slot5"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot6" type="PanelContainer" parent="HotbarContainer"]
+layout_mode = 2
+
+[node name="ItemQuantity" type="Label" parent="HotbarContainer/Slot6"]
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ItemName" type="Label" parent="HotbarContainer/Slot6"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1

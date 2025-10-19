@@ -15,10 +15,18 @@ var world_environment: WorldEnvironment
 # other stuff
 var is_sheltered: bool = false
 var warmth_zones: int = 0
-var inventory = {}
+var inventory = {"stick": 10, "rock": 5}
 var recipes = {
 	"campfire": {"stick": 2, "rock": 1}
 }
+var hotbar = [null, null, null, null, null]
+var selected_hotbar_slot: int = 0
+func ready():
+	var slot_index = 0
+	for item_name in inventory:
+		if slot_index < hotbar.size():
+			hotbar[slot_index] = {"item_name": item_name, "quantity": inventory[item_name]}
+			slot_index += 1
 func _process(delta):
 	update_day_night_cycle(delta)
 	current_hunger -= 0.5 * delta

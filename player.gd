@@ -16,7 +16,6 @@ func _unhandled_input(event):
         self.rotate_y(-event.relative.x * 0.005)
         camera_mount.rotate_x(-event.relative.y * 0.005)
         camera_mount.rotation_degrees.x = clamp(camera_mount.rotation_degrees.x, -70.0, 70.0)
-
     if Input.is_action_just_pressed("ui_cancel"):
         Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
     if Input.is_action_just_pressed("interact"):
