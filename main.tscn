@@ -30,7 +30,8 @@ size = Vector3(1.1777344, 1, 1)
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3742, 10.8631, 13.6553)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3742, 464.54834, 13.6553)
+light_color = Color(0.8146552, 0.49541503, 0.43546897, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7dm0k")
