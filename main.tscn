@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c05wbfojstold"]
+[gd_scene load_steps=11 format=3 uid="uid://c05wbfojstold"]
 
 [ext_resource type="PackedScene" uid="uid://cbhhwf1uenmqj" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://btdfblg0uvxbf" path="res://hud.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://wdh46vehi36c" path="res://snow_01_translucent_4k.png" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://cjecp12253ds1" path="res://shelter.gd" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://c35rcrybyasaj" path="res://berry_bush.tscn" id="3_h2yge"]
 
@@ -15,6 +16,13 @@ sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
 [sub_resource type="Environment" id="Environment_7dm0k"]
 background_mode = 2
 sky = SubResource("Sky_ig7tw")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.7812
+volumetric_fog_albedo = Color(0.95468724, 0.95468724, 0.9776916, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+albedo_texture = ExtResource("2_lquwl")
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(1.1777344, 1, 1)
@@ -33,9 +41,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0422, 5.16994, 7.5412)
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -53.84839)
-size = Vector3(800, 1, 800.697)
+size = Vector3(2000, 1, 2000)
+material = SubResource("StandardMaterial3D_7mycd")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2109, 2.93319, 11.5492)

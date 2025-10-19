@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbr7np8rnjt5n"]
+
+[ext_resource type="Script" uid="uid://cp6csmywxmxr" path="res://wolf.gd" id="1_fv4gx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fv4gx"]
+
+[node name="Wolf" type="CharacterBody3D"]
+script = ExtResource("1_fv4gx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.896637, 0, 0, 0, 0.91265976, 0, 0, 0, 3.5916855, 0, 0, 0)
+mesh = SubResource("BoxMesh_fv4gx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="DetectionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
