@@ -16,6 +16,17 @@ func _unhandled_input(event):
         self.rotate_y(-event.relative.x * 0.005)
         camera_mount.rotate_x(-event.relative.y * 0.005)
         camera_mount.rotation_degrees.x = clamp(camera_mount.rotation_degrees.x, -70.0, 70.0)
+    if event is InputEventMouseButton:
+        if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.is_pressed():
+            PlayerStats.selected_hotbar_slot -= 1
+            if PlayerStats.selected_hotbar_slot < 0:
+                PlayerStats.selected_hotbar_slot = PlayerStats.hotbar.size() - 1
+            print("Selected item: ", PlayerStats.get_selected_item())
+        elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.is_pressed():
+            PlayerStats.selected_hotbar_slot += 1
+            if PlayerStats.selected_hotbar_slot >= PlayerStats.hotbar.size():
+                PlayerStats.selected_hotbar_slot = 0
+            print("Selected item: ", PlayerStats.get_selected_item())
     if Input.is_action_just_pressed("ui_cancel"):
         Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
     if Input.is_action_just_pressed("interact"):
@@ -35,7 +46,7 @@ func _unhandled_input(event):
                 PlayerStats.inventory[item] -= recipe[item]
                 var new_campfire = campfire_scene.instantiate()
                 get_tree().root.add_child(new_campfire)
-                new_campfire.global_transform.origin = character_model.global_transform.origin + character_model.global_transform.basis.z * -2.0
+                new_campfire.global_position = global_position - global_transform.basis.z * 2.0
         else:
             print("Not enough resources to craft a campfire. Need 2 sticks and 1 rock.")
 

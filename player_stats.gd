@@ -55,6 +55,10 @@ func update_day_night_cycle(delta):
 			print("The sun sets. It is now night.")
 		if world_environment:
 			world_environment.environment.ambient_light_energy = 0.1
+func get_selected_item():
+	if hotbar[selected_hotbar_slot] != null:
+		return hotbar[selected_hotbar_slot]["item_name"]
+	return null
 func is_player_safe() -> bool:
 	return is_sheltered or warmth_zones > 0
 func add_to_inventory(item_name):
