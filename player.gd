@@ -17,15 +17,13 @@ func _unhandled_input(event):
 		camera_mount.rotate_x(-event.relative.y * 0.005)
 		camera_mount.rotation_degrees.x = clamp(camera_mount.rotation_degrees.x, -70.0, 70.0)
 	if event is InputEventMouseButton:
+		var size = PlayerStats.hotbar.size()
+		if size == 0: return
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.is_pressed():
-			PlayerStats.selected_hotbar_slot -= 1
-			if PlayerStats.selected_hotbar_slot < 0:
-				PlayerStats.selected_hotbar_slot = PlayerStats.hotbar.size() - 1
+			PlayerStats.selected_hotbar_slot = (PlayerStats.selected_hotbar_slot - 1 + size) % size
 			print("Selected item: ", PlayerStats.get_selected_item())
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.is_pressed():
-			PlayerStats.selected_hotbar_slot += 1
-			if PlayerStats.selected_hotbar_slot >= PlayerStats.hotbar.size():
-				PlayerStats.selected_hotbar_slot = 0
+			PlayerStats.selected_hotbar_slot = (PlayerStats.selected_hotbar_slot + 1) % size
 			print("Selected item: ", PlayerStats.get_selected_item())
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
